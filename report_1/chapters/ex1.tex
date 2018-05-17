@@ -1,0 +1,40 @@
+\section*{Exercise 1.2 - SYN attempts}
+\subsection*{rep-1: IP address}
+The IPv4 address is \texttt{192.168.83.24}.
+
+
+\subsection*{rep-2: SYN probing results}
+
+\subsubsection*{Port 445}
+We used the following command to get the probe:
+\begin{verbatim}
+tgn "ip(dst = 192.168.83.33) /tcp(dst = 445, syn)"
+\end{verbatim}
+The TCP section of the response contains the \texttt{SYN/ACK} flags. Hence we can conclude the port is open. This means this example shows case A.
+
+\subsubsection*{Port 113}
+We used the following command to get the probe:
+\begin{verbatim}
+tgn "ip(dst = 192.168.83.33) /tcp(dst = 113, syn)"
+\end{verbatim}
+For this probe no response have been sent back. We conclude that the message has been dropped. Therefore this example shows case C.
+
+
+\subsubsection*{Port 9920}
+We used the following command to get the probe:
+\begin{verbatim}
+tgn "ip(dst = 192.168.83.33) /tcp(dst = 9920, syn)""
+\end{verbatim}
+The TCP section of the response contains the \texttt{RST/ACK} flags. Hence we can conclude the port is closed. This is case B.
+
+
+\subsubsection*{Port 7210}
+We used the following command to get the probe:
+\begin{verbatim}
+tgn "ip(dst = 192.168.83.33) /tcp(dst = 7210, syn)"
+\end{verbatim}
+This probe was responded with an ICMP message. This message contained the text \texttt{Destination Unreachable}. This is case D. It should be noted here, that the reponse was not sent back to the sending port. Instead the message was sent to port 7210 on our machine.
+
+
+
+\subsection*{rep-3:}
