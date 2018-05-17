@@ -1,8 +1,53 @@
 \section*{Exercise 2.1a - Pcap format}
-\subsection*{rep-4}
+\subsection*{rep-4: First three rows of pcap file}
+The lines have been obtained with the following command:
+\begin{verbatim}
+cat synscan.pcap | tcpdump -t -nr - | head -3 > rep-4
+\end{verbatim}
+The lines are:
+\begin{verbatim}
+IP 192.168.83.24.848 > 192.168.83.1.2049: Flags [P.], seq 3466753733:3466753893, ack 4109170401, 
+win 3012, options [nop,nop,TS val 407079 ecr 950719840], 
+length 160: NFS request xid 1469516420 156 getattr fh 0,0/22
+
+IP 192.168.83.1.2049 > 192.168.83.24.848: Flags [P.], seq 1:129, ack 160, win 5999, 
+options [nop,nop,TS val 950719851 ecr 407079], 
+length 128: NFS reply xid 1469516420 reply ok 124 getattr NON 3 ids 0/3 sz 0
+
+IP 192.168.83.24.848 > 192.168.83.1.2049: Flags [.], ack 129, win 3012, 
+options [nop,nop,TS val 407079 ecr 950719851], length 0
+\end{verbatim}
 
 \section*{Exercise 2.1b - Flow Record format}
 \subsection*{rep-5}
+With the following command the pcap file has been converted:
+\begin{verbatim}
+rwptoflow --flow-output=dksp_flow_comp.rw synscan.pcap --compression-method=zlib
+\end{verbatim}
+Next command returns the first five lines and the header:
+\begin{verbatim}
+rwcut dksp_flow_comp.rw | head -6 > rep-5
+\end{verbatim}
+The lines are:
+\begin{verbatim}
+          sIP|           dIP|sPort|dPort|pro|packets|bytes|flags|                  sTime|
+          duration|                  eTime|ttl|
+          
+192.168.83.24|  192.168.83.1|  848| 2049|  6|      1|  212|PA   |2018/05/09T11:23:11.391|
+             0.000|2018/05/09T11:23:11.391| 64|
+             
+ 192.168.83.1| 192.168.83.24| 2049|  848|  6|      1|  180|PA   |2018/05/09T11:23:11.391|
+             0.000|2018/05/09T11:23:11.391| 64|
+             
+192.168.83.24|  192.168.83.1|  848| 2049|  6|      1|   52| A   |2018/05/09T11:23:11.391|
+             0.000|2018/05/09T11:23:11.391| 64|
+             
+192.168.83.24|  192.168.83.1|  848| 2049|  6|      1|  288|PA   |2018/05/09T11:23:11.391|
+             0.000|2018/05/09T11:23:11.391| 64|
+             
+ 192.168.83.1| 192.168.83.24| 2049|  848|  6|      1|  108|PA   |2018/05/09T11:23:11.391|
+             0.000|2018/05/09T11:23:11.391| 64|
+\end{verbatim}
 
 \section*{Exercise 2.2 - Extracting data rates}
 \subsection*{rep-6}
