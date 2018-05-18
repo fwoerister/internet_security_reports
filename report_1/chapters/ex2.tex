@@ -50,7 +50,54 @@ The lines are:
 \end{verbatim}
 
 \section*{Exercise 2.2 - Extracting data rates}
-\subsection*{rep-6}
-\subsection*{rep-7}
-\subsection*{rep-8}
+
+\subsection*{rep-6 Time interval values of the data file}
+\subsubsection*{Start time}
+The human readable start time has been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  ~/workfiles/team16.flowrecord.rw | head -1
+\end{verbatim}
+The output is \texttt{2012/04/26T00:00:00,26482}.
+
+The epoch version has been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  --epoch-time ~/workfiles/team16.flowrecord.rw | head -1
+\end{verbatim}
+The output is \texttt{1335398400,2648}.
+
+\subsubsection*{End time}
+The human readable start time has been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  ~/workfiles/team16.flowrecord.rw | tail -1
+\end{verbatim}
+The output is \texttt{2012/04/26T00:59:59,26775}.
+
+The epoch version has been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  --epoch-time ~/workfiles/team16.flowrecord.rw | tail -1
+\end{verbatim}
+The output is \texttt{1335401999,267751}.
+
+
+\subsection*{rep-7 Number of packets per hour}
+The number of packets have been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  --value=packet --bin-time=3600 ~/workfiles/team16.flowrecord.rw
+\end{verbatim}
+The result is \texttt{2012/04/26T00:00:00,127348359}
+
+\subsection*{rep-8 Number of unique IP source addresses}
+The number of unique IP source addresses have been obtained with the following command:
+\begin{verbatim}
+rwuniq --sort-output --delimited=',' --no-title --fields=stime
+  --value=sIP-Distinct --bin-time=3600 ~/workfiles/team16.flowrecord.rw
+\end{verbatim}
+The output is \texttt{2012/04/26T00:00:00,1620232}.
+
 \subsection*{rep-9}
+The darkspace contains 1/256th of all available IP addresses. Therefore we can estimate, that the pollution the entire Internet is the 256 times the pollution of the darkspace. Realistically the real value is bigger, because the darkspace addresses are known and therefore the pollution may not be directed there. Attackers don't  any benefit of directing their traffic there. We think the Internet is polluted. The pollution causes a higher bandwidth demand across the whole Internet. Additionally extra computing power is used to process this traffic.
