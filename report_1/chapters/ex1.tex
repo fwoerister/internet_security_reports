@@ -40,4 +40,4 @@ This probe was responded with an ICMP message. This message contained the text \
 \subsection*{rep-3: Wireshark for detecting horizontal and vertical scans.}
 You could apply a filter for all response which contain \texttt{RST/ACK} and all ICMP messages with \texttt{Destination Unreachable}. A spike in those response would indicate a horizontal or a vertical scan. However SYN probes which are dropped would not show up. So there are ways to detect those scans, but we think those are not very reliable.
 
-When analyzing large amounts of traffic data, it gets very hard to determine what is normal traffic and abnormal traffic with Wireshark. In addition Wireshark looks at all the transmitted data. So it would be computationally expensive to do such a task with it. Therefore i would not use Wireshark for large data analyzes.
+When analyzing large amounts of traffic data, it gets very hard to determine what is normal traffic and abnormal traffic with Wireshark. In addition Wireshark looks at all the transmitted data. So it would be computationally expensive to do such a task with it. Therefore I would not use Wireshark for large data analyzes.
