@@ -1,0 +1,87 @@
+\section*{rep-10}
+The code in figure \ref{fig:rep10} generates the plot for the first subtask of this exercise. It generates a plot, showing the \textit{\#pkts/hour}. The only difference to the other subtasks is in line 6 of this code snippet. Here the parameter 3 describes the column index of the data we want to plot. The indices for subtask 2-4 can be seen in table \ref{tab:indices}.
+\begin{table}[H]
+\center
+\begin{tabular}{lr}
+\toprule
+index & feature name \\
+\midrule
+2 & \#bytes / hour (daily avg.) \\
+4 & \#uIPs / hour (daily avg.) \\
+5 & \#uIPd / hour (daily avg.) \\
+\bottomrule
+\end{tabular}
+\caption{Indices for the several dataset features}
+\label{tab:indices}
+\end{table}
+\begin{figure}[H]
+\lstinputlisting{./chapters/matlab/team16_ex3_rep10_1.m}
+\caption{Matlab code for first subtask of rep-10}
+\label{fig:rep10}
+\end{figure}
+
+In addition a function was implemented, for plotting a graph, which also deals with the epoch to datenum format conversion. The exact implementation of this function is listed in figure \ref{fig:plotDarkNetData}.
+
+\begin{figure}[H]
+\lstinputlisting{./chapters/matlab/plotDarknetData.m}
+\caption{Matlab code for the 'plotDarknetData' function}
+\label{fig:plotDarkNetData}
+\end{figure}
+
+For the normalization we simply loaded every feature set in a separate feature vector and devided it by the vectors max value. In figure \ref{fig:normalization} the normalization is demonstrated on the first feature \(\#pkts/hour\). The smoothing, as described in the exercise description, was implemented in the matlab function 'smoothLine'.
+
+\begin{figure}[H]
+\lstinputlisting{./chapters/matlab/team16_ex3_rep10_5_normalization.m}
+\caption{Matlab code for the normalization}
+\label{fig:normalization}
+\end{figure}
+
+
+\subsection*{Results}
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{./chapters/plots/rep10_1.jpg}\\
+\caption{Results of rep10-1}
+\end{figure}
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{./chapters/plots/rep10_2.jpg}\\
+\caption{Results of rep10-2}
+\end{figure}
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{./chapters/plots/rep10_3.jpg}\\
+\caption{Results of rep10-3}
+\end{figure}
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{./chapters/plots/rep10_4.jpg}\\
+\caption{Results of rep10-4}
+\end{figure}
+
+\section*{rep-11}
+
+\section*{rep-12}
+
+\section*{rep-13}
+
+\section*{rep-14}
+
+\section*{rep-15}
+
+\section*{rep-16}
+
+\section*{rep-17}
+
+\section*{rep-18}
+
+\section*{rep-19}
+
+\section*{rep-20}
+
+\section*{rep-21}
+
+\section*{rep-22}
+
+\section*{rep-23}
+

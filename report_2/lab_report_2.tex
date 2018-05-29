@@ -35,6 +35,11 @@
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{enumerate}
 \usepackage{float}
+\usepackage{color}
+\usepackage{booktabs}
+
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -51,8 +56,25 @@
 \date{\today} % Date for the report
 \begin{document}
 
+\lstset{language=Matlab,
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle={\tiny \color{black}},
+    numbersep=9pt,
+    emph=[1]{for,end,break},emphstyle=[1]\color{red},
+}
+
 \maketitle % Insert the title, author and date
 
-
+\input{chapters/ex3.tex}
+\input{chapters/ex4.tex}
 
 \end{document}
+
