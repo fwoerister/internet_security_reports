@@ -118,7 +118,7 @@ feature & total sum & mean & median & std. deviation \\
 \#uIPd/hour  & 719 606.146 &  1 007.852 &   993.364 &  237.632 \\
 \bottomrule
 \end{tabular}
-\caption{Statistics of June 2017 from Jun2017\_gen.csv}
+\caption{Statistics of June 2017 from Jun2017\_gen.csv (in millions)}
 \label{tab:stat_jun2017_gen}
 \end{table}
 
@@ -134,12 +134,14 @@ feature & total sum & mean & median & std. deviation \\
 \#uIPd/hour  &    553.823  &     18.461  &     19.124   &    3.080 \\
 \bottomrule
 \end{tabular}
-\caption{Statistics of June 2017 from global\_last10years.csv}
+\caption{Statistics of June 2017 from global\_last10years.csv (in millions)}
 \label{tab:stat_jun2017_global}
 \end{table}
 
 \section*{rep-15}
-
+Comparing table \ref{tab:stat_jun2017_gen} and \ref{tab:stat_jun2017_global} leads to the conclusion, that some values do coincide, but not all. Especially for the \textit{total sum} column, there are big differences. The problem is, that in the first table the averages for every hour are summed up and compared to the averaged value of the second table, therefore it is not surprising, that the \textit{total sum} values of table \ref{tab:stat_jun2017_global} are significantly smaller.
+There are also differences, when it comes to '\#uIPs/hour' and '\#uIPd/hour'. The problem here is, that in the table \ref{tab:stat_jun2017_gen}, the same IP occuring every hour of the same day, is counted as a unique IP, where as in table \ref{tab:stat_jun2017_global} this IP address would be counted for the whole day as \textbf{one} unique IP address.
+Mean, median and standard deviation values for '\#pkts/hour' and '\#bytes/hour' are not sensitive to those problems, therefore they do coincide in both tables.
 
 \section*{rep-16}
 
