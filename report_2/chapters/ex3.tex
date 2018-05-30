@@ -220,7 +220,7 @@ others & -0.744 & -0.724 & -40.126 \%  \\
 \caption{Boxplots of \textit{rep-17}}
 \end{figure}
 \section*{rep-18}
-
+Yes, there are negative values for '\#uIPs/hour' and '\#uIPd/hour'. In case one and the same host uses all three protocols in the same hour, this ip address is going to becaunted three times (for each protocol), but in the 'Jun2017\_gen.csv' file it will be counted only one time. In this case we would end up with a 'others' value in the '\#uIPs/hour' table of $1 - (1+1+1) = -2$. The same applies to the '\#uIPd/hour'. The 'packets' values are not affected, as every packet referes to \textbf{exactly one} protocol.
 % \section*{rep-19} OPTIONAL
 % \section*{rep-20} OPTIONAL
 
