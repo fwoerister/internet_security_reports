@@ -87,13 +87,22 @@ In order to find out, if there are more sources sending data to the darkspace, t
 
 \begin{figure}[H]
 \lstinputlisting{./chapters/matlab/team16_ex3_rep12_less.m}
-\caption{Matlab code for the normalization}
-\label{fig:correlation}
+\caption{Matlab code for calculating the ratio between the average unique source addresses and the average unique destination addresses per hour.}
+\label{fig:ratio_source_destination_ip}
 \end{figure}
 
 The ratio between source and destination IPs is $9.31$. This means, that there are approximately 10 times more addresses receiving data from the darspace. This result was expected, as \textit{rep-11} already showed, that there is a horizontal scan going on.
 
 \section*{rep-13}
+To find the peak of the '\#uIPs/hour (daily avg.)', the first column was converted to datenum format before retrieving the maximum value of the '\#uIPs/hour (daily avg.)' column. The \textit{max} function retrieves the maximum value and it's index. This index we use to retrieve the Date of this peak. This three steps are listed in figure \ref{fig:find_peak}.
+
+\begin{figure}[H]
+\lstinputlisting{./chapters/matlab/team16_ex3_rep13_less.m}
+\caption{Matlab snipped for finding the peak of '\#uIPs/hour (daily avg.)'}
+\label{fig:find_peak}
+\end{figure}
+
+This commands lead to the finding, that the peak occured on the 15th of December 2015. As the neighbor values (14th and 16th of December) are significantly smaller, the peak lasted only for one day.
 
 \section*{rep-14}
 
