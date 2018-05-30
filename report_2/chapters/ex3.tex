@@ -105,8 +105,41 @@ To find the peak of the '\#uIPs/hour (daily avg.)', the first column was convert
 This commands lead to the finding, that the peak occured on the 15th of December 2015. As the neighbor values (14th and 16th of December) are significantly smaller, the peak lasted only for one day.
 
 \section*{rep-14}
+Table \ref{tab:stat_jun2017_gen} shows the statistical values for the \textit{Jun2017\_gen.csv} file and table \ref{tab:stat_jun2017_global} shows statistical values for the same time periode, but the data was extracted from the \textit{global\_last10years.csv} file. 
+\begin{table}[H]
+\center
+\begin{tabular}{lrrrr}
+\toprule
+feature & total sum & mean & median & std. deviation \\
+\midrule
+\#pkts/hour & 6 922.229  &   9.695  &    9.937  &   1.443 \\
+\#bytes/hour & 207.103  &   0.290   &   0.241  &   0.098 \\
+\#uIPs/hour  & 13 157.867  &  18.428  &   18.511 &    4.329 \\
+\#uIPd/hour  & 719 606.146 &  1 007.852 &   993.364 &  237.632 \\
+\bottomrule
+\end{tabular}
+\caption{Statistics of June 2017 from Jun2017\_gen.csv}
+\label{tab:stat_jun2017_gen}
+\end{table}
+
+\begin{table}[H]
+\center
+\begin{tabular}{lrrrr}
+\toprule
+feature & total sum & mean & median & std. deviation \\
+\midrule
+\#pkts/hour  &    291.275  &      9.709  &      9.996   &    1.169 \\
+\#bytes/hour &      8.700  &      0.290  &      0.254   &    0.076 \\
+\#uIPs/hour  & 30 268.997  &  1 008.967  &  1 008.526   &  101.158\\
+\#uIPd/hour  &    553.823  &     18.461  &     19.124   &    3.080 \\
+\bottomrule
+\end{tabular}
+\caption{Statistics of June 2017 from global\_last10years.csv}
+\label{tab:stat_jun2017_global}
+\end{table}
 
 \section*{rep-15}
+
 
 \section*{rep-16}
 
@@ -114,9 +147,9 @@ This commands lead to the finding, that the peak occured on the 15th of December
 
 \section*{rep-18}
 
-\section*{rep-19}
+% \section*{rep-19} OPTIONAL
 
-\section*{rep-20}
+% \section*{rep-20} OPTIONAL
 
 \section*{rep-21}
 
