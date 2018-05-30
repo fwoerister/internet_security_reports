@@ -144,6 +144,28 @@ There are also differences, when it comes to '\#uIPs/hour' and '\#uIPd/hour'. Th
 Mean, median and standard deviation values for '\#pkts/hour' and '\#bytes/hour' are not sensitive to those problems, therefore they do coincide in both tables.
 
 \section*{rep-16}
+The protocolls found in the 'Jun2017\_proto.csv' file, are listed in table \ref{tab:proto}
+
+\begin{table}[H]
+\center
+\begin{tabular}{lrp{5cm}}
+\toprule
+Protocol No. & Name & Description \\
+\midrule
+1 & ICMP & The Internet Control Message Protocol is used for reporting status informations or error messages in IP, TCP and UDP protocols. Especially Gateways and Hosts use this Protocol for reporting problems.\\
+6 & TCP & The Transmission Control Protocol is one of the main protocols of the internet. It provides reliable, ordered and error-checked delivery of bytes. \\
+17 & UDP & The User Datagram Protocol is one of the core members of the internet. The big difference to TCP is, that it is connection less, which means, that data can be send, without the need to set up communication channels or data paths.\\
+\bottomrule
+\end{tabular}
+\caption{A short description of the protocols, that were found in the 'Jun2017\_proto.csv' file.}
+\label{tab:proto}
+\end{table}
+
+% TODO: reference sources
+% https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+% https://www.itwissen.info/ICMP-Internet-control-message-protocol-ICMP-Protokoll.html
+% https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+% https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
 \section*{rep-17}
 
