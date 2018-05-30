@@ -28,6 +28,7 @@ title('Amp. Spectrum for #pkts') %displays title
 
 % max fft = 9.137220827459206 * 10^8 (first entry of max_amp_pkt)
 % corresponding k = 3                (first entry of max_k_pkt)
+% p_3 = 720/3 = 240
 
 
 subplot(1,2,2);
@@ -45,4 +46,4 @@ title('Amp. Spectrum for #usip') %displays title
 
 % max fft = 2.159647426896751 * 10^7 (first entry of max_amp_usip)
 % corresponding k = 1                (first entry of max_k_usip)
-
+% p_1 = 720/1 = 720
