@@ -6,7 +6,3 @@ ts_udip(ts_udip==0)=NaN;
 ts_usip(ts_usip==0)=NaN;
 
 ratio = nanmean(ts_udip)/nanmean(ts_usip);
-% ratio = 9.309649530942099
-
-% answer: 
-% The results makes sense -> horizontal scans in darkspace

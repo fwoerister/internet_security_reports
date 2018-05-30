@@ -83,6 +83,15 @@ $
 \end{figure}
 
 \section*{rep-12}
+In order to find out, if there are more sources sending data to the darkspace, than addresses receiving data from it, the ratio between the unique source and destination IPs is calculated, as shown in figure \ref{fig:ratio_source_destination_ip}.
+
+\begin{figure}[H]
+\lstinputlisting{./chapters/matlab/team16_ex3_rep12_less.m}
+\caption{Matlab code for the normalization}
+\label{fig:correlation}
+\end{figure}
+
+The ratio between source and destination IPs is $9.31$. This means, that there are approximately 10 times more addresses receiving data from the darspace. This result was expected, as \textit{rep-11} already showed, that there is a horizontal scan going on.
 
 \section*{rep-13}
 
