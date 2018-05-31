@@ -1,0 +1,1 @@
+  rwcut --num-recs=200000 --delimited=',' --fields=sIP,dIP,sPort,dPort,protocol,flags,ttl,bytes team16.flowrecord.rw > team16_flowrecord.csv

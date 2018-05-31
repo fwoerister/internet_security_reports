@@ -1,4 +1,5 @@
-\section*{rep-10}
+\section*{Exercise 3}
+\subsection*{rep-10}
 The code in figure \ref{fig:rep10} generates the plot for the first subtask of this exercise. It generates a plot, showing the \textit{\#pkts/hour}. The only difference to the other subtasks is in line 6 of this code snippet. Here the parameter 3 describes the column index of the data we want to plot. The indices for subtask 2-4 can be seen in table \ref{tab:indices}.
 \begin{table}[H]
 \center
@@ -37,7 +38,7 @@ For the normalization we simply loaded every feature set in a separate feature v
 \end{figure}
 
 
-\subsection*{Results}
+\subsubsection*{Results}
 \begin{figure}[H]
 \center
 \includegraphics[width=.7\textwidth]{./chapters/plots/rep10_1.jpg}\\
@@ -59,7 +60,7 @@ For the normalization we simply loaded every feature set in a separate feature v
 \caption{Results of rep10-4}
 \end{figure}
 
-\section*{rep-11}
+\subsection*{rep-11}
 For this task, the correlation matrix was calculated by executing the matlab code of figure \ref{fig:correlation}
 \begin{figure}[H]
 \lstinputlisting{./chapters/matlab/team16_ex3_rep11.m}
@@ -82,7 +83,7 @@ $
 \label{matrix:correlation}
 \end{figure}
 
-\section*{rep-12}
+\subsection*{rep-12}
 In order to find out, if there are more sources sending data to the darkspace, than addresses receiving data from it, the ratio between the unique source and destination IPs is calculated, as shown in figure \ref{fig:ratio_source_destination_ip}.
 
 \begin{figure}[H]
@@ -93,7 +94,7 @@ In order to find out, if there are more sources sending data to the darkspace, t
 
 The ratio between source and destination IPs is $9.31$. This means, that there are approximately 10 times more addresses receiving data from the darspace. This result was expected, as \textit{rep-11} already showed, that there is a horizontal scan going on.
 
-\section*{rep-13}
+\subsection*{rep-13}
 To find the peak of the '\#uIPs/hour (daily avg.)', the first column was converted to datenum format before retrieving the maximum value of the '\#uIPs/hour (daily avg.)' column. The \textit{max} function retrieves the maximum value and it's index. This index we use to retrieve the Date of this peak. This three steps are listed in figure \ref{fig:find_peak}.
 
 \begin{figure}[H]
@@ -104,7 +105,7 @@ To find the peak of the '\#uIPs/hour (daily avg.)', the first column was convert
 
 This commands lead to the finding, that the peak occured on the 15th of December 2015. As the neighbor values (14th and 16th of December) are significantly smaller, the peak lasted only for one day.
 
-\section*{rep-14}
+\subsection*{rep-14}
 Table \ref{tab:stat_jun2017_gen} shows the statistical values for the \textit{Jun2017\_gen.csv} file and table \ref{tab:stat_jun2017_global} shows statistical values for the same time periode, but the data was extracted from the \textit{global\_last10years.csv} file. 
 \begin{table}[H]
 \center
@@ -138,12 +139,12 @@ feature & total sum & mean & median & std. deviation \\
 \label{tab:stat_jun2017_global}
 \end{table}
 
-\section*{rep-15}
+\subsection*{rep-15}
 Comparing table \ref{tab:stat_jun2017_gen} and \ref{tab:stat_jun2017_global} leads to the conclusion, that some values do coincide, but not all. Especially for the \textit{total sum} column, there are big differences. The problem is, that in the first table the averages for every hour are summed up and compared to the averaged value of the second table, therefore it is not surprising, that the \textit{total sum} values of table \ref{tab:stat_jun2017_global} are significantly smaller.
 There are also differences, when it comes to '\#uIPs/hour' and '\#uIPd/hour'. The problem here is, that in the table \ref{tab:stat_jun2017_gen}, the same IP occuring every hour of the same day, is counted as a unique IP, where as in table \ref{tab:stat_jun2017_global} this IP address would be counted for the whole day as \textbf{one} unique IP address.
 Mean, median and standard deviation values for '\#pkts/hour' and '\#bytes/hour' are not sensitive to those problems, therefore they do coincide in both tables.
 
-\section*{rep-16}
+\subsection*{rep-16}
 The protocolls found in the 'Jun2017\_proto.csv' file, are listed in table \ref{tab:proto}
 
 \begin{table}[H]
@@ -167,8 +168,8 @@ Protocol No. & Name & Description \\
 % https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 % https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
-\section*{rep-17}
-\subsection*{Statistics}
+\subsection*{rep-17}
+\subsubsection*{Statistics}
 \begin{table}[H]
 \center
 \begin{tabular}{lrrr}
@@ -196,7 +197,7 @@ UDP &     0.012 &  0.004 &  276.280 \% \\
 others & -0.021 & -0.005 & -123.326 \% \\
 \end{tabular}
 \caption{uIPs statistics (mean and median in millions)}
-\label{tab:proto-stats-packets}
+\label{tab:proto-stats-uIPs}
 \end{table}
 
 \begin{table}[H]
@@ -211,41 +212,47 @@ UDP &     0.155 &  0.120 &  92.408 \%  \\
 others & -0.744 & -0.724 & -40.126 \%  \\
 \end{tabular}
 \caption{uIPd statistics (mean and median in millions)}
-\label{tab:proto-stats-packets}
+\label{tab:proto-stats-uIPd}
 \end{table}
-\subsection*{Boxplots}
+\subsubsection*{Boxplots}
 \begin{figure}[H]
 \center
 \includegraphics[width=.7\textwidth]{./chapters/plots/rep17.jpg}\\
 \caption{Boxplots of \textit{rep-17}}
 \end{figure}
-\section*{rep-18}
+\subsection*{rep-18}
 Yes, there are negative values for '\#uIPs/hour' and '\#uIPd/hour'. In case one and the same host uses all three protocols in the same hour, this ip address is going to becaunted three times (for each protocol), but in the 'Jun2017\_gen.csv' file it will be counted only one time. In this case we would end up with a 'others' value in the '\#uIPs/hour' table of $1 - (1+1+1) = -2$. The same applies to the '\#uIPd/hour'. The 'packets' values are not affected, as every packet referes to \textbf{exactly one} protocol.
 % \section*{rep-19} OPTIONAL
 % \section*{rep-20} OPTIONAL
 
-\section*{rep-21a}
+\subsection*{rep-21a}
 \begin{figure}[H]
 \center
 \includegraphics[width=.7\textwidth]{./chapters/plots/rep21a.jpg}\\
 \caption{}
 \end{figure}
 
-\section*{rep-21b}
+\subsection*{rep-21b}
 \begin{figure}[H]
 \center
 \includegraphics[width=.7\textwidth]{./chapters/plots/rep21b.jpg}\\
 \caption{}
 \end{figure}
 
-\section*{rep-21c}
+\subsection*{rep-21c}
 \textbf{TODO:} find the exact 'k'- value of other peaks $\Rightarrow$ \textit{Additionally, comment on other possible periodicity and patterns in case that your plots show more than one periodical pattern!}
-\section*{rep-22}
+\subsection*{rep-22}
 \begin{figure}[H]
 \center
 \includegraphics[width=1\textwidth]{./chapters/plots/rep-22.jpg}\\
 \caption{}
 \end{figure}
 
-\section*{rep-23}
+\subsection*{rep-23a}
+
+\subsection*{rep-23b}
+
+\subsection*{rep-23c}
+
+\subsection*{rep-23d}
 
