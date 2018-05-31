@@ -9,12 +9,72 @@ rwcut --num-recs=200000 --delimited=',' --fields=sIP,dIP,sPort,dPort,protocol,fl
 \label{fig:bash-flowrec}
 \end{figure}
 \subsection*{rep-25}
+\begin{table}[H]
+\center
+\begin{tabular}{lr}
+\toprule
+port & count \\
+\midrule
+80 & 31022 \\
+0 & 7357 \\
+29001 & 1890 \\ 
+\bottomrule
+\end{tabular}
+\caption{The most frequent source ports (top 3)}
+\label{tab:most-frequent-source-ports}
+\end{table}
+
+\begin{table}[H]
+\center
+\begin{tabular}{lr}
+\toprule
+port & count \\
+\midrule
+445 & 79793 \\
+10320 & 32014 \\
+3389 & 7834 \\
+\bottomrule
+\end{tabular}
+\caption{The most frequent destination ports (top 3).}
+\label{tab:most-frequent-destination-ports}
+\end{table}
+
+\begin{table}[H]
+\center
+\begin{tabular}{lr}
+\toprule
+protocol & count \\
+\midrule
+6 (TCP) & 145833 \\ 
+17 (UDP) & 46924 \\
+1 (ICMP) & 7169 \\
+41 (IPv6) & 73 \\
+47 (GRE) & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Frequency of protocols.}
+\label{tab:all-protocols}
+\end{table}
 
 \subsection*{rep-26}
 
 \subsection*{rep-27}
-
+\begin{figure}[H]
+\center
+\includegraphics[width=1\textwidth]{./chapters/plots/rep-27.pdf}\\
+\caption{TTL distribution of packets}
+\label{fig:ttl-distribution}
+\end{figure}
 \subsection*{rep-28}
+The most recurring IP source address is \textbf{85.167.14.252}.
+It is easy to find (e.g. by looking at the bytes histogram (figure \ref{fig:bytes-histo}) out that all packets this host sent were of the same size. In addition this host accessed a wide range of IP addresses and a wide range of Ports, therefore it is possible, that this host performed a vertical and horizontal scanning.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=.9\textwidth]{./chapters/plots/rep-28-bytes-histo}\\
+\caption{bytes histogramm of all packets sent by 88.167.14.252}
+\label{fig:bytes-histo}
+\end{figure}
 
 \subsection*{rep-29}
 
