@@ -38,7 +38,13 @@
 \usepackage{float}
 \usepackage{color}
 \usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tablefootnote}
 
+\usepackage{todonotes}
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
 
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
@@ -60,6 +66,7 @@
 
 \lstset{language=Matlab,
     breaklines=true,
+    captionpos=b,
     morekeywords={matlab2tikz},
     keywordstyle=\color{blue},
     morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
