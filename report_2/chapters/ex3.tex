@@ -260,11 +260,9 @@ The \textit{\#pkts/hour} and the \textit{\#uIPs/hour} show periodicity.\\
 
 \textit{\#pkts/hour} has a periodicity with an amplitude of $9.1372 * 10^8$ at k=3. This complies with a period of 240 hours. \\
 
-\TODO{find next peak for \#pkts/hour}
+For \textit{\#uIPs/hour} there is a periodicity for k = 1. At this point the amplitude is $21.5964 * 10^6$. k = 1 corresponds to a period of 720 hours. \\
 
-For \textit{\#uIPs/hour} there is a periodicity for k = 1. At this point the amplitude is $21.5964 * 10^6$. k = 1 corresponds to a period of 720 hours.
-
-\TODO{find next peak for \#uIPs/hour}
+In addition, both signals have a peak at k=30, which corresponds to a period of 24 hours.
 
 \subsection*{rep-22}
 \begin{figure}[H]
@@ -275,10 +273,11 @@ For \textit{\#uIPs/hour} there is a periodicity for k = 1. At this point the amp
 
 \subsection*{rep-23}
 \subsubsection*{a)}
-\TODO{add solution}
+The correlation factor between the mean \textit{\#pkts/hour} and mean \#usip/hour is $-0.062219840363756$. \\
+The correlation factor between the median \textit{\#pkts/hour} and mean \#usip/hour is $0.053918525095147$.
 \subsubsection*{b)}
-\TODO{add solution}
+As both coefficients are close to zero, there is no correlation between the mean and median  \textit{\#pkts/hour} and \textit{\#usip/hour} signals. 
 \subsubsection*{c)}
-\TODO{add solution}
+The correlation was slightly higher when averaging the signal with 'mean', although we would have expected the 'median' to be higher. The reason for this assumption is, that the 'median' is more robust to outliers.
 \subsubsection*{d)}
-\TODO{add solution}
+There is a peak on day 7 and 15 in both signals, but there are also peaks in the \textit{\#pkts/hour} signal, that do not appear in the \textit{\#usip/hour} signal on day 21 and 28. The peaks seem to appear weekly. This peaks could be caused by some botnet, that only operates in certain time intervals.
