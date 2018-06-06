@@ -1,0 +1,56 @@
+ <operator activated="true" class="process" compatibility="5.3.015" expanded="true" name="Process">
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="5.3.015" expanded="true" height="60" name="Retrieve flowrecord (3)" width="90" x="112" y="75">
+        <parameter key="repository_entry" value="//Local Repository/data/flowrecord"/>
+      </operator>
+      <operator activated="true" class="aggregate" compatibility="5.3.015" expanded="true" height="76" name="Aggregate (2)" width="90" x="313" y="75">
+        <list key="aggregation_attributes">
+          <parameter key="sIP" value="count"/>
+        </list>
+        <parameter key="group_by_attributes" value="|dPort"/>
+      </operator>
+      <operator activated="true" class="sort" compatibility="5.3.015" expanded="true" height="76" name="Sort (2)" width="90" x="514" y="75">
+        <parameter key="attribute_name" value="count(sIP)"/>
+        <parameter key="sorting_direction" value="decreasing"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="5.3.015" expanded="true" height="60" name="Retrieve flowrecord (4)" width="90" x="112" y="210">
+        <parameter key="repository_entry" value="//Local Repository/data/flowrecord"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="5.3.015" expanded="true" height="76" name="Filter Examples (2)" width="90" x="313" y="210">
+        <parameter key="condition_class" value="attribute_value_filter"/>
+        <parameter key="parameter_string" value="dPort = 445"/>
+      </operator>
+      <operator activated="true" class="aggregate" compatibility="5.3.015" expanded="true" height="76" name="Aggregate (3)" width="90" x="514" y="210">
+        <list key="aggregation_attributes">
+          <parameter key="sIP" value="count"/>
+        </list>
+        <parameter key="group_by_attributes" value="|sIP"/>
+      </operator>
+      <operator activated="true" class="sort" compatibility="5.3.015" expanded="true" height="76" name="Sort (3)" width="90" x="715" y="165">
+        <parameter key="attribute_name" value="count(sIP)"/>
+        <parameter key="sorting_direction" value="decreasing"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="5.3.015" expanded="true" height="60" name="Retrieve flowrecord (5)" width="90" x="112" y="300">
+        <parameter key="repository_entry" value="//Local Repository/data/flowrecord"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="5.3.015" expanded="true" height="76" name="Filter Examples (3)" width="90" x="313" y="345">
+        <parameter key="condition_class" value="attribute_value_filter"/>
+        <parameter key="parameter_string" value="sIP=190.253.254.250 &amp;&amp; dPort=445"/>
+      </operator>
+      <connect from_op="Retrieve flowrecord (3)" from_port="output" to_op="Aggregate (2)" to_port="example set input"/>
+      <connect from_op="Aggregate (2)" from_port="example set output" to_op="Sort (2)" to_port="example set input"/>
+      <connect from_op="Sort (2)" from_port="example set output" to_port="result 1"/>
+      <connect from_op="Retrieve flowrecord (4)" from_port="output" to_op="Filter Examples (2)" to_port="example set input"/>
+      <connect from_op="Filter Examples (2)" from_port="example set output" to_op="Aggregate (3)" to_port="example set input"/>
+      <connect from_op="Aggregate (3)" from_port="example set output" to_op="Sort (3)" to_port="example set input"/>
+      <connect from_op="Sort (3)" from_port="example set output" to_port="result 2"/>
+      <connect from_op="Retrieve flowrecord (5)" from_port="output" to_op="Filter Examples (3)" to_port="example set input"/>
+      <connect from_op="Filter Examples (3)" from_port="example set output" to_port="result 3"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+    </process>
+  </operator>
+</process>

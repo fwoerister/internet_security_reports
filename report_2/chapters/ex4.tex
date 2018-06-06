@@ -57,7 +57,8 @@ protocol & rate \\
 \end{table}
 
 \subsection*{rep-26}
-\TODO{add solution}
+One remarkable finding was, that there are no common used ports under the most occurring destination ports.
+By looking at the histograms for source IP addresses we found out that a small number of addresses sent most packages. The same applies to the histogram of destination IP addresses.
 
 \subsection*{rep-27}
 
@@ -84,9 +85,18 @@ It is easy to find (e.g. by looking at the bytes histogram (figure \ref{fig:byte
 \subsection*{rep-29}
 The source IP address, that connected to highest number of destination Ports is again the source IP address \textbf{85.167.14.252}. This is the same IP address as in \textit{rep-28}. Hence it's has the same behavior.
 
+\begin{figure}[H]
+\center
+\includegraphics[width=.7\textwidth]{./chapters/plots/rep29.png}\\
+\caption{Scatter Plot sIP - dPort}
+\end{figure}
+
 \subsection*{rep-30}
 The port, that is getting the most connections from different IP sources is the port 445. It is getting IP connections from 79793 different IP sources. It receives the biggest amount of packets from the source IP \textbf{190.253.254.250} (1240 packets). \\
 
-\TODO{add RapidMiner XML code for experiment}
-\TODO{more detailed discription of the behavior}
+\lstinputlisting[label={lst:rapidminer_experiment},
+				caption=Rapidminer experiment setup, language=XML]
+				{./chapters/rapidminer/experiment.xml}
+
+Port 445 is the SMB Port on Microsoft Windows machines. It is known, that this port has a vulnerability, that is exploited by the NetBIOS worm. After a machine is infected, it performs further scan attempts. In our case the machine \textbf{190.253.254.250} only sends packets to a very small number of different IP addresses. Either this is client with a bad configuration, that tries to connect to this IP address.
 

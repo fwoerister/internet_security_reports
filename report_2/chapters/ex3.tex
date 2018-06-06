@@ -1,43 +1,6 @@
 \section*{Exercise 3}
 
 \subsection*{rep-10}
-The code in listing~\ref{lst:rep10} generates the plot for the first subtask of this exercise, showing the \textit{\#pkts/hour}. The only difference to the other subtasks is in line 6 of this code snippet. Here the parameter 3 describes the column index of the data we want to plot. The indices for subtask 2-4 can be seen in table \ref{tab:indices}.  \TODO{maybe kick the implementation part}
-\begin{table}[H]
-\center
-\begin{tabular}{lr}
-\toprule
-index & feature name \\
-\midrule
-2 & \#bytes / hour (daily avg.) \\
-4 & \#uIPs / hour (daily avg.) \\
-5 & \#uIPd / hour (daily avg.) \\
-\bottomrule
-\end{tabular}
-\caption{Indices of the dataset features}
-\label{tab:indices}
-\end{table}
-
-\lstinputlisting[label={lst:rep10},
-				caption=Code for first subtask of rep-10]
-				{./chapters/matlab/team16_ex3_rep10_1.m}
-				
-
-In addition a function was implemented, for plotting a graph, which also deals with the epoch to datenum format conversion. The exact implementation of this function is listed in listing~\ref{lst:plotDarkNetData}.
- \TODO{i would kick that too}
-
-\lstinputlisting[label={lst:plotDarkNetData},
-				caption=Code for the 'plotDarknetData' function]
-				{./chapters/matlab/plotDarknetData.m}
-
-Subtask 5 requires to normalize the data shown in Subtask 1 - 4. For the normalization we simply loaded every feature set in a separate feature vector and devided it by the vectors max value. In listing~\ref{lst:normalization} the normalization is demonstrated for the first feature \(\#pkts/hour\). The smoothing was implemented in the function 'smoothLine'. It was implemented as described in the exercise description.
-
-\lstinputlisting[label={lst:normalization},
-				caption=Code for the normalization]
-				{./chapters/matlab/team16_ex3_rep10_5_normalization.m}
-
-\subsubsection*{Results}
-In the next figures the required plots are presented.
-
 \begin{figure}[H]
 \center
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -107,16 +70,8 @@ In order to find out, if there are more sources sending data to the darkspace, t
 The ratio between source and destination IPs is 9.31. This means, that there are approximately 10 times more addresses receiving data from the darkspace. This result was expected, as \textit{rep-11} already showed, that there may be a horizontal scan going on.
 
 \subsection*{rep-13}
-To find the peak of the '\#uIPs/hour (daily avg.)', the first column was converted to datenum format before retrieving the maximum value of the '\#uIPs/hour (daily avg.)' column. The \textit{max} function retrieves the maximum value and it's index. This index we use to retrieve the Date of this peak. This three steps are listed in listing~\ref{lst:find_peak}.
-
-\TODO{maybe kick that part with the timestamps}
-
-\lstinputlisting[label={lst:find_peak},
-				caption=Snipped for finding the peak of '\#uIPs/hour (daily avg.)']
-				{./chapters/matlab/team16_ex3_rep13_less.m}
-
-
-The peak occurred on the 15th of December 2015. As the neighbor values (14th and 16th of December) are significantly smaller, the peak lasted only for one day.
+To find the peak of the '\#uIPs/hour (daily avg.)', the first column was converted to datenum format before retrieving the maximum value of the '\#uIPs/hour (daily avg.)' column. The \textit{max} function retrieves the maximum value and it's index. \\
+The peak occurred on the \textbf{15th of December 2015}. As the neighbour values (14th and 16th of December) are significantly smaller, the peak lasted only for one day.
 
 \subsection*{rep-14}
 Table~\ref{tab:stat_jun2017_gen} shows the statistical values for the file \textit{Jun2017\_gen.csv} and table~\ref{tab:stat_jun2017_global} shows statistical values for the same time period, but the data was extracted from the \textit{global\_last10years.csv}. 
